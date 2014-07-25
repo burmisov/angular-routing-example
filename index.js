@@ -7,6 +7,8 @@ var path = require('path');
 
 var app = express();
 
+app.set('view engine', 'jade');
+
 app.use(morgan('dev'));
 app.use(serveStatic(path.join(process.cwd(), 'static')));
 
