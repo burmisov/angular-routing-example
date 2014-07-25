@@ -14,10 +14,6 @@ app.set('view engine', 'jade');
 app.use(morgan('dev'));
 
 app.use(iisBaseUrl());
-app.use(function (req, res, next) {
-	res.locals.applMdPath = req.header('x-iisnode-appl_md_path');
-	next();
-});
 
 app.use(serveStatic(path.join(process.cwd(), 'static')));
 

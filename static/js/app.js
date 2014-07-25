@@ -9,8 +9,6 @@ angular.module('ngRoutingExample', ['ngRoute'])
 	})
 
 	.controller('SecondController', function ($anchorScroll) {
-		$anchorScroll();
-
 		// todo
 	})
 
