@@ -23,6 +23,6 @@
     "express": "^4.6.1",
     "debug": "^1.0.4",
     "jade": "^1.5.0",
-    "iis-baseurl": "0.0.3"
+    "iis-baseurl": "0.0.4"
   }
 }
