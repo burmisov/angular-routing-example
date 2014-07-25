@@ -5,11 +5,20 @@ var morgan = require('morgan');
 var serveStatic = require('serve-static');
 var path = require('path');
 
+var iisBaseUrl = require('iis-baseurl');
+
 var app = express();
 
 app.set('view engine', 'jade');
 
 app.use(morgan('dev'));
+
+app.use(iisBaseUrl());
+app.use(function (req, res, next) {
+	res.locals.applMdPath = req.header('APPL_MD_PATH');
+	next();
+});
+
 app.use(serveStatic(path.join(process.cwd(), 'static')));
 
 require('./routes')(app);
