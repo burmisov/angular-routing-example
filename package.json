@@ -1,0 +1,25 @@
+{
+  "name": "angular-routing-example",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/burmisov/angular-routing-example"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/burmisov/angular-routing-example/issues"
+  },
+  "homepage": "https://github.com/burmisov/angular-routing-example",
+  "dependencies": {
+    "morgan": "^1.2.0",
+    "serve-static": "^1.4.0",
+    "express": "^4.6.1",
+    "debug": "^1.0.4"
+  }
+}
