@@ -3,7 +3,7 @@ html(lang="en", ng-app="ngRoutingExample")
   head
     title Angular routing example
     link(rel="stylesheet", href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css")
-    base(href="#{iisBaseUrl ? iisBaseUrl : '/.'}")
+    base(href="#{iisBaseUrl || ''}/.")
   body
     block body
     script(src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
