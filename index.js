@@ -12,7 +12,7 @@ app.set('view engine', 'jade');
 app.use(morgan('dev'));
 app.use(serveStatic(path.join(process.cwd(), 'static')));
 
-require('routes')(app);
+require('./routes')(app);
 
 var port = process.env.PORT || 4080;
 app.listen(port);
