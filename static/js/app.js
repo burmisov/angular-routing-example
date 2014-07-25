@@ -1,19 +1,21 @@
 angular.module('ngRoutingExample', ['ngRoute'])
 
-	.controller('MainController', function ($scope, $route, $routeParams, $location) {
-
+	.controller('MainController', function () {
+		// todo
 	})
 
-	.controller('FirstController', function ($scope) {
-
+	.controller('FirstController', function () {
+		// todo
 	})
 
-	.controller('SecondController', function ($scope) {
+	.controller('SecondController', function ($anchorScroll) {
+		$anchorScroll();
 
+		// todo
 	})
 
-	.controller('ThirdController', function ($scope) {
-
+	.controller('ThirdController', function () {
+		// todo
 	})
 
 	.config(function ($routeProvider, $locationProvider) {
