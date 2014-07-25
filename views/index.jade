@@ -1,4 +1,13 @@
 extends layout
 
 block body
-  h1 Hello :)
+  .container(ng-controller="MainController")
+    h1 Angular-route example
+    h2 Links:
+    .list-group
+      a.list-group-item(href="/") First (default) view
+      a.list-group-item(href="/second") Second view
+      a.list-group-item(href="/third") Third view
+
+    h2 View:
+    .container(ng-view)
