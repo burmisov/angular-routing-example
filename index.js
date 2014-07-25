@@ -15,7 +15,7 @@ app.use(morgan('dev'));
 
 app.use(iisBaseUrl());
 app.use(function (req, res, next) {
-	res.locals.applMdPath = req.header('APPL_MD_PATH');
+	res.locals.applMdPath = req.header('x-iisnode-appl_md_path');
 	next();
 });
 

@@ -9,7 +9,7 @@ module.exports = function (app) {
 		if (validRoutes.indexOf(req.params.route) > -1) {
 			res.render('index');
 		} else {
-			res.send(404, 'not found.');
+			res.send(404, 'not found. (' + res.locals.applMdPath + ')');
 		}
 	});
 
