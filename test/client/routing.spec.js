@@ -57,12 +57,21 @@ describe('Маршрутизатор на базе ng-route', function () {
 			linkToSecondHash.click();
 			browser.executeScript(getPositionScript).then(function (scrollPosAfter) {
 				expect(scrollPosAfter).toBeGreaterThan(scrollPosBefore);
-				browser.get('/second#dolorsitamet');
+				browser.get('/second#dolorSitAmet');
 				browser.executeScript(getPositionScript).then(function (scrollPosDirect) {
 					expect(scrollPosDirect).toEqual(scrollPosBefore);
 					done();
 				});				
 			});
 		});
+	});
+
+	it('должен правильно переходить после хэш-ссылки на обычную', function () {
+		browser.get('/second');
+		browser.setLocation('/second#dolorSitAmet');
+		var linkToThird = element(by.linkText('Third view'));
+		linkToThird.click();
+		var rootHeader = element(by.css('div[ng-view]')).element(by.tagName('h3'));
+		expect(rootHeader.getText()).toContain('third template');
 	});
 });
