@@ -7,8 +7,11 @@
     "newcap": true,
     "nonew": true,
     "predef": [
-    	"describe",
-    	"it",
-    	"expect"
+        "describe",
+        "it",
+        "expect",
+        "browser",
+        "element",
+        "by"
     ]
 }

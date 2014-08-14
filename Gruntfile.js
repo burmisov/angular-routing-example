@@ -37,7 +37,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-jasmine-node');
 	grunt.loadNpmTasks('grunt-protractor-runner');
 	grunt.loadNpmTasks('grunt-exec');
-	grunt.loadNpmTasks('grunt-run')
+	grunt.loadNpmTasks('grunt-run');
 
 	grunt.registerTask('lint', ['jshint']);
 	grunt.registerTask('unit-test', ['jasmine_node']);
