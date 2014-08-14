@@ -16,7 +16,7 @@ describe('HTTP-сервер', function () {
 			.get('/')
 			.expect(200)
 			.expect('Content-Type', /html/)			
-			.end(function (err, res) {
+			.end(function (err) {
 				expect(err).toBe(null);
 				done();
 			});
@@ -27,7 +27,7 @@ describe('HTTP-сервер', function () {
 			.get('/second')
 			.expect(200)
 			.expect('Content-Type', /html/)
-			.end(function (err, res) {
+			.end(function (err) {
 				expect(err).toBe(null);
 				done();
 			});
@@ -37,7 +37,7 @@ describe('HTTP-сервер', function () {
 		request(app)
 			.get('/other')
 			.expect(404)
-			.end(function (err, res) {
+			.end(function (err) {
 				expect(err).toBe(null);
 				done();
 			});
@@ -48,7 +48,7 @@ describe('HTTP-сервер', function () {
 			.get('/partials/first')
 			.expect(200)
 			.expect('Content-Type', /html/)
-			.end(function (err, res) {
+			.end(function (err) {
 				expect(err).toBe(null);
 				done();
 			});

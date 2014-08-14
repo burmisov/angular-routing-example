@@ -12,4 +12,4 @@ module.exports = function (app) {
 	app.use(iisBaseUrl());
 
 	app.use(serveStatic(path.join(process.cwd(), 'static')));
-}
+};
