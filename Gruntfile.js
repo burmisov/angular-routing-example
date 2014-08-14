@@ -4,7 +4,7 @@ module.exports = function (grunt) {
 			options: {
 				jshintrc: true
 			},
-			all: ['Gruntfile.js', 'index.js', 'routes.js', 'static/js/**/*.js']
+			all: ['*.js', 'test/**/*.js', 'static/js/**/*.js']
 		}
 	});
 
