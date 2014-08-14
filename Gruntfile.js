@@ -56,12 +56,15 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-jasmine');
 
 	grunt.registerTask('lint', ['jshint']);
-	grunt.registerTask('unit-test', ['jasmine_node']);
+	grunt.registerTask('test-server', ['jasmine_node']);
 	grunt.registerTask('default', ['jshint', 'jasmine_node']);
 	grunt.registerTask('test-protractor', ['exec:installChromeDriver', 'protractor']);
-	grunt.registerTask('client-test', [
+	grunt.registerTask('test-client-e2e', [
 		'run:server',
 		'test-protractor',
 		'stop:server'
 	]);
+	grunt.registerTask('test-client-unit', ['jasmine']);
+	grunt.registerTask('test-client', ['test-client-unit', 'test-client-e2e']);
+	grunt.registerTask('test', ['lint', 'test-server', 'test-client']);
 };
