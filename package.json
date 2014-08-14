@@ -31,6 +31,7 @@
     "supertest": "^0.13.0",
     "grunt-jasmine-node": "^0.2.1",
     "grunt-protractor-runner": "^1.1.0",
-    "grunt-exec": "^0.4.6"
+    "grunt-exec": "^0.4.6",
+    "grunt-run": "^0.2.3"
   }
 }
