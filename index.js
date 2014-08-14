@@ -1,22 +1,9 @@
 var debug = require('debug')('index');
 
 var express = require('express');
-var morgan = require('morgan');
-var serveStatic = require('serve-static');
-var path = require('path');
-
-var iisBaseUrl = require('iis-baseurl');
-
 var app = express();
 
-app.set('view engine', 'jade');
-
-app.use(morgan('dev'));
-
-app.use(iisBaseUrl());
-
-app.use(serveStatic(path.join(process.cwd(), 'static')));
-
+require('./appsetup')(app);
 require('./routes')(app);
 
 var port = process.env.PORT || 4080;
