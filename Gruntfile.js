@@ -30,6 +30,21 @@ module.exports = function (grunt) {
 				cmd: 'node',
 				args: ['index.js']
 			}
+		},
+		jasmine: {
+			all: {
+				src: ['static/js/**/*.js'],
+				options: {
+					specs: ['test/client/unit/**/*.spec.js'],
+					display: 'full',
+					vendor: [
+						'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js',
+						'http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js',
+						'http://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.17/angular.min.js',
+						'http://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.17/angular-route.min.js'
+					]
+				}
+			}
 		}
 	});
 
@@ -38,6 +53,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-protractor-runner');
 	grunt.loadNpmTasks('grunt-exec');
 	grunt.loadNpmTasks('grunt-run');
+	grunt.loadNpmTasks('grunt-contrib-jasmine');
 
 	grunt.registerTask('lint', ['jshint']);
 	grunt.registerTask('unit-test', ['jasmine_node']);
