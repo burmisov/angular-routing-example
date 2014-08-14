@@ -51,17 +51,23 @@ describe('Маршрутизатор на базе ng-route', function () {
 
 	it('должен осуществлять скролл при прямом переходе на хэш-ссылку', function (done) {
 		browser.get('/second');
-		var getPositionScript = "return document.body.scrollTop";
-		browser.executeScript(getPositionScript).then(function (scrollPosBefore) {
+		var getPositionScript =
+			"var callback = arguments[arguments.length - 1];" +
+			"setTimeout(function () {" + 
+			"  callback(document.body.scrollTop);" +
+			"}, 1000);";
+		browser.executeAsyncScript(getPositionScript).then(function (scrollPosBefore) {
 			var linkToSecondHash = element(by.linkText('Dolor sit amet'));
 			linkToSecondHash.click();
-			browser.executeScript(getPositionScript).then(function (scrollPosAfter) {
+			browser.executeAsyncScript(getPositionScript).then(function (scrollPosAfter) {
 				expect(scrollPosAfter).toBeGreaterThan(scrollPosBefore);
-				browser.get('/second#dolorSitAmet');
-				browser.executeScript(getPositionScript).then(function (scrollPosDirect) {
-					expect(scrollPosDirect).toEqual(scrollPosBefore);
-					done();
-				});				
+				browser.get('/second#dolorSitAmet').then(function () {
+					browser.executeAsyncScript(getPositionScript).then(function (scrollPosDirect) {
+						console.log('>>>', scrollPosDirect, scrollPosAfter);
+						expect(scrollPosDirect).toEqual(scrollPosAfter);
+						done();
+					});
+				});
 			});
 		});
 	});
