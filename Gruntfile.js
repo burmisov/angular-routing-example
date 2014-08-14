@@ -7,7 +7,7 @@ module.exports = function (grunt) {
 			all: ['*.js', 'test/**/*.js', 'static/js/**/*.js']
 		},
 		jasmine_node: {
-			all: ['test/']
+			all: ['test/server/']
 		}
 	});
 

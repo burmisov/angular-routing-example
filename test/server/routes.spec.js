@@ -3,8 +3,8 @@ var express = require('express');
 var request = require('supertest');
 
 // Тестируемые модули
-var routes = require('../routes');
-var setup = require('../appsetup');
+var routes = require('../../routes');
+var setup = require('../../appsetup');
 
 describe('HTTP-сервер', function () {
 	var app = express();
