@@ -1,3 +1,4 @@
+/*globals angular, console */
 angular.module('ngRoutingExample', ['ngRoute'])
 
 	.controller('MainController', function () {
@@ -29,7 +30,7 @@ angular.module('ngRoutingExample', ['ngRoute'])
 					$anchorScroll();					
 				});
 			}
-		}
+		};
 	})
 
 	.config(function ($routeProvider, $locationProvider) {

@@ -2,7 +2,7 @@ var validRoutes = ['', 'second', 'third'];
 
 module.exports = function (app) {
 	app.get('/', function (req, res) {
-		res.render('index')
+		res.render('index');
 	});
 
 	app.get('/:route', function (req, res) {
