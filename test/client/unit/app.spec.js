@@ -1,11 +1,13 @@
+/*globals angular, jQuery, $ */
+
 describe('Приложение Angular-Routing-Example', function () {
 	it('должно содержать глобальные переменные jQuery', function () {
-		expect(window.jQuery).toBeDefined();
-		expect(window.$).toBeDefined();
+		expect(jQuery).toBeDefined();
+		expect($).toBeDefined();
 	});
 
 	it('должно содержать глобальную переменную angular', function () {
-		expect(window.angular).toBeDefined();
+		expect(angular).toBeDefined();
 	});
 
 	it('должно без ошибок загружать свой модуль', function () {
